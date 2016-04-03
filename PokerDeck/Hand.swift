@@ -14,5 +14,9 @@ public struct Hand {
     init() {
         cards = [Card]()
     }
+    
+    mutating func empty() {
+        cards.removeAll()
+    }
 }
 

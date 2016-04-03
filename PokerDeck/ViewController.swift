@@ -58,9 +58,32 @@ class ViewController: UIViewController {
         disableButton(buttonDrawFive)
     }
     
+    @IBAction func reloadShuffle(sender: UIButton) {
+        if(deck.cards.count == 52)
+        {
+            deck.shuffleDeck()
+        }
+        else
+        {
+            deck.empty()
+            hand!.empty()
+            deck.createDeck()
+            deck.shuffleDeck()
+        }
+        updateTexts()
+        enableButton(buttonDrawOne)
+        enableButton(buttonDrawFive)
+    }
+    
+    
     func disableButton(button : UIButton) {
         button.enabled = false
         button.alpha = 0.3
+    }
+    
+    func enableButton(button: UIButton) {
+        button.enabled = true
+        button.alpha = 1
     }
     
     
@@ -69,22 +92,48 @@ class ViewController: UIViewController {
         {
             textCard1.text = "\(hand!.cards[0].rank.rawValue) " + " \(hand!.cards[0].suit.rawValue)"
         }
+        else
+        {
+            textCard1.text = "Carte 1"
+        }
+        
         if(hand!.cards.count > 1)
         {
             textCard2.text = "\(hand!.cards[1].rank.rawValue) " + " \(hand!.cards[1].suit.rawValue)"
         }
+        else
+        {
+            textCard2.text = "Carte 2"
+        }
+        
         if(hand!.cards.count > 2)
         {
             textCard3.text = "\(hand!.cards[2].rank.rawValue) " + " \(hand!.cards[2].suit.rawValue)"
         }
+        else
+        {
+            textCard3.text = "Carte 3"
+        }
+        
         if(hand!.cards.count > 3)
         {
             textCard4.text = "\(hand!.cards[3].rank.rawValue) " + " \(hand!.cards[3].suit.rawValue)"
         }
+        else
+        {
+            textCard4.text = "Carte 4"
+        }
+        
         if(hand!.cards.count > 4)
         {
             textCard5.text = "\(hand!.cards[4].rank.rawValue) " + " \(hand!.cards[4].suit.rawValue)"
         }
+        else
+        {
+            textCard5.text = "Carte 5"
+        }
+        
+        textStack.text = "Pile : " + String(deck.cards.count) + " cartes mélangées"
     }
     
 

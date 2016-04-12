@@ -38,13 +38,13 @@ public struct Deck {
         cards.removeAll()
     }
     
-    // Ouvre un paquet de carte 9 mais de 52 puis le mélange
+    // Mélange le paquet de cartes
     mutating func shuffleDeck() {
         var n = 0
         var randomCardNumber: Int
         var temp: Card
         while n <= 51 {
-            randomCardNumber = Int(rand()%(52-n))
+            randomCardNumber = Int(rand()%(52))
             temp = cards[n]
             cards[n] = cards[randomCardNumber]
             cards[randomCardNumber] = temp

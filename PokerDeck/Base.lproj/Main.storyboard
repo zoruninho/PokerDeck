@@ -62,6 +62,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="evaluateHand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cIm-NK-RqD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ol-H3-7nB">
                                 <rect key="frame" x="195" y="28" width="154" height="34"/>

@@ -58,6 +58,10 @@ class ViewController: UIViewController {
         disableButton(buttonDrawFive)
     }
     
+    @IBAction func evaluateHand(sender: AnyObject) {
+        textEvaluate.text = hand!.combinaison()
+    }
+    
     @IBAction func reloadShuffle(sender: UIButton) {
         if(deck.cards.count == 52)
         {

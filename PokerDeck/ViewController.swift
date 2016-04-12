@@ -138,6 +138,7 @@ class ViewController: UIViewController {
         }
         
         textStack.text = "Pile : " + String(deck.cards.count) + " cartes mélangées"
+        textEvaluate.text = "Evaluation : N/A"
     }
     
 
